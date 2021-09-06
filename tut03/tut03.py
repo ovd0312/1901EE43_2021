@@ -18,7 +18,8 @@ def output(output_file, col_headings, row_items, relevant_cols):
     col_headings = create_string(col_headings,relevant_cols)
     if not os.path.isfile(output_file):                     #If a file doesn't exist, create it
         with open(output_file,'x') as target_file:
-            target_file.write(col_headings)                 # Put column headings
+            target_file.write(col_headings)                 #Put column headings
+            target_file.write(row_items)       
     else:                                                   #Append the row items to the file
         with open(output_file,'a') as target_file:
             target_file.write(row_items)
