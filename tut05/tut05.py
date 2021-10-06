@@ -77,9 +77,9 @@ def generate_marksheet(rno, marksheet, course_map, roll_map, grade_map):
         #Insert Data of the current sem in overall Marksheet 
         overall_sheet.cell(row = 4, column = Sem).value = sem
         overall_sheet.cell(row = 5, column = Sem).value = sem_credits
-        overall_sheet.cell(row = 6, column = Sem).value = spi
+        overall_sheet.cell(row = 6, column = Sem).value = round(spi,2)
         overall_sheet.cell(row = 7, column = Sem).value = total_credits
-        overall_sheet.cell(row = 8, column = Sem).value = cpi
+        overall_sheet.cell(row = 8, column = Sem).value = round(cpi,2)
 
 
     wb.save(op_file)
