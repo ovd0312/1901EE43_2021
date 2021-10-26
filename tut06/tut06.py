@@ -13,6 +13,10 @@ def regex_renamer():
 	season_padding = int(input("Enter the Season Number Padding: "))
 	episode_padding = int(input("Enter the Episode Number Padding: "))
 
+	#Check input validity
+	if series_id>3 or series_id<1 or season_padding<1 or episode_padding<1:
+		return
+
 	#Series ID -> Series Name
 	series_name = {1:"Breaking Bad", 2:"Game of Thrones", 3:"Lucifer"}
 
