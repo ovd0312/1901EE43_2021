@@ -79,14 +79,19 @@ for entry in rem_list:
 	feed_type = entry[2]
 	reg_sem = sch_sem[rno][course][0]
 	sched_sem = sch_sem[rno][course][1]
+
+	name = "NA_IN_STUDENTINFO"
+	mail = "NA_IN_STUDENTINFO"
+	amail = "NA_IN_STUDENTINFO"
+	contact = "NA_IN_STUDENTINFO"
 	if rno in stud_info:
 		name = stud_info[rno]["Name"]
 		mail = stud_info[rno]["email"]
 		amail = stud_info[rno]["aemail"]
 		contact = stud_info[rno]["contact"]
-		new_row = {"Roll Number":rno, "Registered Sem":reg_sem,"Scheduled Sem":sched_sem,"Course Code":course,"Email":mail,"AEmail":amail,"Contact":contact,"Name":name};
+	new_row = {"Roll Number":rno, "Registered Sem":reg_sem,"Scheduled Sem":sched_sem,"Course Code":course,"Email":mail,"AEmail":amail,"Contact":contact,"Name":name};
 		
-		output_file = output_file.append(new_row,ignore_index=True)
+	output_file = output_file.append(new_row,ignore_index=True)
 
 #Put Dataframe in xlsx
 output_file.to_excel("course_feedback_remaining.xlsx",index=False)
